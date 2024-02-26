@@ -2,6 +2,7 @@
 
 #pragma once
 
+#include "Chaos/ChaosEngineInterface.h"
 #include "Engine/DataAsset.h"
 #include "Engine/EngineTypes.h"
 

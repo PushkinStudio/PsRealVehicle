@@ -1278,7 +1278,7 @@ void UPrvVehicleMovementComponent::UpdateSuspension(float DeltaTime)
 		{
 			TArray<FHitResult> Hits;
 
-#if ENGINE_MINOR_VERSION >= 15
+#if ENGINE_MINOR_VERSION >= 15 || ENGINE_MAJOR_VERSION >= 5
 			bHit = UKismetSystemLibrary::SphereTraceMulti(this, SuspWorldLocation, SuspTraceEndLocation, SuspState.SuspensionInfo.CollisionRadius, SuspensionTraceTypeQuery, bTraceComplex, IgnoredActors, DebugType, Hits, true);
 #else
 			bHit = UKismetSystemLibrary::SphereTraceMulti_NEW(this, SuspWorldLocation, SuspTraceEndLocation, SuspState.SuspensionInfo.CollisionRadius, SuspensionTraceTypeQuery, bTraceComplex, IgnoredActors, DebugType, Hits, true);
@@ -1334,7 +1334,7 @@ void UPrvVehicleMovementComponent::UpdateSuspension(float DeltaTime)
 		{
 			if (bUseLineTrace)
 			{
-#if ENGINE_MINOR_VERSION >= 15
+#if ENGINE_MINOR_VERSION >= 15 || ENGINE_MAJOR_VERSION >= 5
 				bHit = UKismetSystemLibrary::LineTraceSingle(this, SuspWorldLocation + RadiusUpVector, SuspTraceEndLocation - RadiusUpVector, SuspensionTraceTypeQuery, bTraceComplex, IgnoredActors, DebugType, Hit, true);
 #else
 				bHit = UKismetSystemLibrary::LineTraceSingle_NEW(this, SuspWorldLocation + RadiusUpVector, SuspTraceEndLocation - RadiusUpVector, SuspensionTraceTypeQuery, bTraceComplex, IgnoredActors, DebugType, Hit, true);
@@ -1342,7 +1342,7 @@ void UPrvVehicleMovementComponent::UpdateSuspension(float DeltaTime)
 			}
 			else
 			{
-#if ENGINE_MINOR_VERSION >= 15
+#if ENGINE_MINOR_VERSION >= 15 || ENGINE_MAJOR_VERSION >= 5
 				bHit = UKismetSystemLibrary::SphereTraceSingle(this, SuspWorldLocation, SuspTraceEndLocation, SuspState.SuspensionInfo.CollisionRadius, SuspensionTraceTypeQuery, bTraceComplex, IgnoredActors, DebugType, Hit, true);
 #else
 				bHit = UKismetSystemLibrary::SphereTraceSingle_NEW(this, SuspWorldLocation, SuspTraceEndLocation, SuspState.SuspensionInfo.CollisionRadius, SuspensionTraceTypeQuery, bTraceComplex, IgnoredActors, DebugType, Hit, true);
@@ -1614,7 +1614,7 @@ void UPrvVehicleMovementComponent::UpdateSuspensionVisualsOnly(float DeltaTime)
 			{
 				TArray<FHitResult> Hits;
 
-#if ENGINE_MINOR_VERSION >= 15
+#if ENGINE_MINOR_VERSION >= 15 || ENGINE_MAJOR_VERSION >= 5
 				bHit = UKismetSystemLibrary::SphereTraceMulti(this, SuspWorldLocation, SuspTraceEndLocation, SuspState.SuspensionInfo.CollisionRadius, SuspensionTraceTypeQuery, bTraceComplex, IgnoredActors, DebugType, Hits, true);
 #else
 				bHit = UKismetSystemLibrary::SphereTraceMulti_NEW(this, SuspWorldLocation, SuspTraceEndLocation, SuspState.SuspensionInfo.CollisionRadius, SuspensionTraceTypeQuery, bTraceComplex, IgnoredActors, DebugType, Hits, true);
@@ -1670,7 +1670,7 @@ void UPrvVehicleMovementComponent::UpdateSuspensionVisualsOnly(float DeltaTime)
 			{
 				if (bUseLineTrace)
 				{
-#if ENGINE_MINOR_VERSION >= 15
+#if ENGINE_MINOR_VERSION >= 15 || ENGINE_MAJOR_VERSION >= 5
 					bHit = UKismetSystemLibrary::LineTraceSingle(this, SuspWorldLocation + RadiusUpVector, SuspTraceEndLocation - RadiusUpVector, SuspensionTraceTypeQuery, bTraceComplex, IgnoredActors, DebugType, Hit, true);
 #else
 					bHit = UKismetSystemLibrary::LineTraceSingle_NEW(this, SuspWorldLocation + RadiusUpVector, SuspTraceEndLocation - RadiusUpVector, SuspensionTraceTypeQuery, bTraceComplex, IgnoredActors, DebugType, Hit, true);
@@ -1678,7 +1678,7 @@ void UPrvVehicleMovementComponent::UpdateSuspensionVisualsOnly(float DeltaTime)
 				}
 				else
 				{
-#if ENGINE_MINOR_VERSION >= 15
+#if ENGINE_MINOR_VERSION >= 15 || ENGINE_MAJOR_VERSION >= 5
 					bHit = UKismetSystemLibrary::SphereTraceSingle(this, SuspWorldLocation, SuspTraceEndLocation, SuspState.SuspensionInfo.CollisionRadius, SuspensionTraceTypeQuery, bTraceComplex, IgnoredActors, DebugType, Hit, true);
 #else
 					bHit = UKismetSystemLibrary::SphereTraceSingle_NEW(this, SuspWorldLocation, SuspTraceEndLocation, SuspState.SuspensionInfo.CollisionRadius, SuspensionTraceTypeQuery, bTraceComplex, IgnoredActors, DebugType, Hit, true);
